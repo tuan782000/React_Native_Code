@@ -8,7 +8,9 @@ import {
 } from "react-native";
 import ListItem from "../components/ListItem";
 
+// Sử dụng kỹ thuật props truyền dữ liệu từ tabs xuống cho con thông qua weatherData || truyền cho thằng return phía dưới
 const UpcomingWeather = ({ weatherData }) => {
+    // item này được truyền từ ở dưới FlatList
     const renderItem = ({ item }) => (
         <ListItem
             condition={item.weather[0].main}
@@ -33,6 +35,7 @@ const UpcomingWeather = ({ weatherData }) => {
                     data={weatherData}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.dt_txt}
+                    // này là id của item đó thui
                 />
             </ImageBackground>
         </SafeAreaView>

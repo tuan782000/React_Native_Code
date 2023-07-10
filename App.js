@@ -17,11 +17,13 @@ import { useGetWeather } from "./src/hooks/useGetWeather";
 import ErrorItem from "./src/components/ErrorItem";
 
 const App = () => {
+    // Cha lấy dữ liệu ở đây (tại hooks)
     const [loading, error, weather] = useGetWeather();
     // if (weather) {
     //     console.log(weather);
     // }
 
+    // Nó đang xét điều kiện neesy mà có dữ liệu weather và danh sách  weather.list và loading = false thì mới chạy lệnh bên trong
     if (weather && weather.list && !loading) {
         return (
             <NavigationContainer>
@@ -29,7 +31,7 @@ const App = () => {
             </NavigationContainer>
         );
     }
-
+    // trường hợp còn lại là show lỗi hoặc show trang loading
     return (
         <View style={styles.container}>
             {error ? (

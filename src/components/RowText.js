@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 
 const RowText = (props) => {
+    // sử dụng kỹ thuật props để truyền dữ liệu từ cha xuống con để hiển thị
     const {
         messageOne,
         messageTwo,

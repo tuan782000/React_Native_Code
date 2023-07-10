@@ -3,7 +3,9 @@ import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const IconText = (props) => {
+    // sử dụng kỹ thuật props để truyền dữ liệu từ cha xuống con để hiển thị
     const {iconName, iconColor, bodyText, bodyTextStyle } = props;
+    // sử dụng kỹ thuật destructuring để viết cú pháp styles cho gọn
     const {container, textTheme} = styles
     return (
         <View style={container}>

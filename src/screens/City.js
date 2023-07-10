@@ -11,6 +11,7 @@ import { Feather } from "@expo/vector-icons";
 import moment from "moment";
 import IconText from "../components/IconText";
 
+// Sử dụng kỹ thuật props truyền dữ liệu từ tabs xuống cho con thông qua weatherData
 const City = ({weatherData}) => {
     const {
         container,

@@ -9,6 +9,8 @@ export const useGetWeather = () => {
     const [lat, setLat] = useState([]);
     const [lon, setLon] = useState([]);
 
+    // Này gọi API kèm theo tọa độ để lấy dữ liệu về sau đó sử dụng useState bắt sự thay đổi và gán lại cho return cuối cùng để đưa về kết quả
+    // kèm xử lý bất đồng bộ
     const fetchWeatherData = async () => {
         try {
             const res = await fetch(
@@ -22,7 +24,11 @@ export const useGetWeather = () => {
             setLoading(false);
         }
     };
+    // có try thì không có catch mà có catch thì không có try
+    // Cái finally là luôn luôn chạy nha
 
+    // Lấy tọa độ
+    // xử lý bất đồng bộ
     useEffect(() => {
         (async () => {
             let { status } = await Location.requestForegroundPermissionsAsync();
@@ -37,5 +43,7 @@ export const useGetWeather = () => {
             await fetchWeatherData();
         })();
     }, [lat, lon]);
+
+    //này trả kết quả sau khi xử lý
     return [loading, error, weather];
 };

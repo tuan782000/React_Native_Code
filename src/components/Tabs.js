@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
-
+// Này nhận dữ liệu truyền cha xuống (cha nó là thằng App) truyền weather xuống
 const Tabs = ({ weather }) => {
     return (
         <Tab.Navigator
